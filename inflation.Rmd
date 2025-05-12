@@ -60,6 +60,7 @@ inflation %>%
 A code chunk is for longer code/output:
 
 ```{r}
+# This is a new comment to test version 2
 with(mtcars, plot(hp, mpg))
 
 ```
@@ -81,10 +82,14 @@ usethis::use_git_config(
   
 usethis::use_git()
 
+usethis::create_github_token(description = "Token for Repro Workshop 2025")
 
+gitcreds::gitcreds_set() # <-- Token must *not* go into brackets, paste when asked
 
+usethis::gh_token_help()
 
+repro::automate()
 
-
+repro::use_gha_docker()
 
 
