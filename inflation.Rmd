@@ -50,6 +50,10 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
+    theme_minimal() +
+  ylab("subjective inflation in %-points") +
+  labs(color = "") +
+  theme(legend.position = c(.1, .9)) +
   NULL
 ```
 
@@ -57,6 +61,7 @@ A code chunk is for longer code/output:
 
 ```{r}
 with(mtcars, plot(hp, mpg))
+
 ```
 
 Inline code is for single numbers/short text:
@@ -66,6 +71,17 @@ We have `32` cars.
 ```{python}
 print("Hello World! Python here, do you miss R already?")
 ```
+
+# use a function without loading the package:
+# package::function
+usethis::use_git_config(
+  user.name = "Luise Kratt", # <-- change to your name
+  user.email = "luise.kratt@gmail.com", # <-- and your email
+  init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
+  
+usethis::use_git()
+
+
 
 
 
